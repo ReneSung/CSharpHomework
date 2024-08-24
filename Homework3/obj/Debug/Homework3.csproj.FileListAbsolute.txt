@@ -12,3 +12,10 @@ D:\study\CSharpHomework\Homework3\obj\Debug\Homework3.csproj.AssemblyReference.c
 D:\study\CSharpHomework\Homework3\obj\Debug\Homework3.csproj.CoreCompileInputs.cache
 D:\study\CSharpHomework\Homework3\obj\Debug\Homework3.exe
 D:\study\CSharpHomework\Homework3\obj\Debug\Homework3.pdb
+C:\study\CSharpHomework\Homework3\bin\Debug\Homework3.exe.config
+C:\study\CSharpHomework\Homework3\bin\Debug\Homework3.exe
+C:\study\CSharpHomework\Homework3\bin\Debug\Homework3.pdb
+C:\study\CSharpHomework\Homework3\obj\Debug\Homework3.csproj.AssemblyReference.cache
+C:\study\CSharpHomework\Homework3\obj\Debug\Homework3.csproj.CoreCompileInputs.cache
+C:\study\CSharpHomework\Homework3\obj\Debug\Homework3.exe
+C:\study\CSharpHomework\Homework3\obj\Debug\Homework3.pdb

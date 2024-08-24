@@ -15,25 +15,35 @@ namespace Homework3
     public List<Abonent> AbonentList { get; }
 
     /// <summary>
-    /// Чтение файла в формате txt, добавление объектов в AbonentList.
+    /// Добавляет нового абонента в коллекцию AbonentList и записывает абонента в конец файла.
     /// </summary>
-    public void ReadFile()
+    /// <param name="abonent">Объект Abonent с именем и номером телефона.</param>
+    public void AddAbonent(Abonent abonent)
     {
-      /*using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
+      bool isFreeEntry = true;
+      foreach (var entry in AbonentList)
       {
-				this.AbonentList = new List<Abonent>();
-				//string line = string.Empty;
-				while (!sr.EndOfStream)
+        if (entry.Name.ToLower() == abonent.Name.ToLower() && entry.PhoneNumber == abonent.PhoneNumber)
         {
-          string[] split = Regex.Split(sr.ReadLine(), ": ");
-          Abonent abonent = new Abonent(split[0], split[1]);
-          AbonentList.Add(abonent);
+          isFreeEntry = false;
+          break;
         }
-      }*/
+      }
+      if (isFreeEntry)
+      {
+        AbonentList.Add(abonent);
+        using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
+        {
+          sw.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
+        }
+        Console.WriteLine("Добавлен новый абонент.");
+      }
+      else
+        Console.WriteLine("Абонент с таким именем уже есть.");
     }
 
     /// <summary>
-    /// 
+    /// Вывод абонентов в консоль.
     /// </summary>
     public void PrintAbonentList()
     {
@@ -41,6 +51,42 @@ namespace Homework3
       {
         Console.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
       }
+    }
+    
+    /// <summary>
+    /// Удалить объект из коллекции AbonentList, перезаписать обновленную коллекцию в файл.
+    /// </summary>
+    /// <param name="abonent">Объект Abonent с именем и номером телефона.</param>
+    public void DropAbonent(Abonent abonent)
+    {
+      bool isDrop = false;
+      for (int i = 0; i < this.AbonentList.Count; i++)
+      {
+        if (this.AbonentList[i].Name.ToLower() == abonent.Name.ToLower() && this.AbonentList[i].PhoneNumber == abonent.PhoneNumber)
+        {
+          AbonentList.RemoveAt(i);
+          using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8))
+          {
+            foreach (var entry in this.AbonentList)
+            {
+              sw.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
+            }
+          }
+          isDrop = true;
+          break;
+        }
+      }
+
+      if (isDrop)
+        Console.WriteLine("Абонент удален");
+      else
+        Console.WriteLine("Абонент не найден");
+    }
+
+    public List<Abonent> GetAbonentByPhoneNumber(Abonent abonent)
+    {
+      //List<Abonent> filteredList = this.AbonentList.Where(a => a.PhoneNumber == "1111");
+      return this.AbonentList;
     }
     public static Phonebook GetInstance()
     {
@@ -50,15 +96,6 @@ namespace Homework3
     }
     private Phonebook()
     {
-      /*this.AbonentList = new List<string>();
-      using (StreamReader sr = new StreamReader(path))
-      {
-        string line;
-        while ((line = sr.ReadLine()) != null)
-        {
-          AbonentList.Add(line);
-        }
-      }*/
 			using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
 			{
 				//string line = string.Empty;
