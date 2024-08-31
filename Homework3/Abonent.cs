@@ -9,12 +9,22 @@ namespace Homework3
   internal class Abonent
   {
     public string Name { get; set; }
-    public string PhoneNumber { get; set; }
+    public long PhoneNumber { get; set; }
 
-    public Abonent(string name, string phoneNumber)
+    public Abonent(string name, long phoneNumber)
     {
       this.Name = name;
       this.PhoneNumber = phoneNumber;
+    }
+    public Abonent(long phoneNumber)
+      : this(string.Empty, phoneNumber)
+    {
+      this.PhoneNumber = phoneNumber;
+    }
+    public Abonent(string name)
+      : this(name, 0)
+    {
+      this.Name = name;
     }
   }
 }

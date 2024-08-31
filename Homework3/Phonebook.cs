@@ -4,14 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Homework3
 {
   internal class Phonebook
   {
     private static Phonebook instance;
-    private static string path = "phonebook.txt";
+    private const string path = "phonebook.txt";
     public List<Abonent> AbonentList { get; }
 
     /// <summary>
@@ -20,34 +19,34 @@ namespace Homework3
     /// <param name="abonent">Объект Abonent с именем и номером телефона.</param>
     public void AddAbonent(Abonent abonent)
     {
-      bool isFreeEntry = true;
-      foreach (var entry in AbonentList)
-      {
-        if (entry.Name.ToLower() == abonent.Name.ToLower() && entry.PhoneNumber == abonent.PhoneNumber)
-        {
-          isFreeEntry = false;
-          break;
-        }
-      }
-      if (isFreeEntry)
-      {
-        AbonentList.Add(abonent);
+      bool correctEntry = true;
+			foreach (var entry in AbonentList)
+			{
+				if (entry.Name.ToLower() == abonent.Name.ToLower() && entry.PhoneNumber == abonent.PhoneNumber)
+				{
+					correctEntry = false;
+					break;
+				}
+			}
+			if (correctEntry)
+			{
+				AbonentList.Add(abonent);
         using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
         {
           sw.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
         }
         Console.WriteLine("Добавлен новый абонент.");
-      }
-      else
-        Console.WriteLine("Абонент с таким именем уже есть.");
-    }
+			}
+			else
+				Console.WriteLine("Такой абонент уже есть.");
+		}
 
     /// <summary>
     /// Вывод абонентов в консоль.
     /// </summary>
     public void PrintAbonentList()
     {
-      foreach (var abonent in AbonentList)
+      foreach (var abonent in this.AbonentList)
       {
         Console.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
       }
@@ -83,11 +82,40 @@ namespace Homework3
         Console.WriteLine("Абонент не найден");
     }
 
-    public List<Abonent> GetAbonentByPhoneNumber(Abonent abonent)
+		/// <summary>
+		/// Вывести в консоль абонентов с соответствующим номером телефона.
+		/// </summary>
+		/// <param name="abonent">Объект Abonent.</param>
+		public void PrintAbonentByPhoneNumber(Abonent abonent)
     {
-      //List<Abonent> filteredList = this.AbonentList.Where(a => a.PhoneNumber == "1111");
-      return this.AbonentList;
+      List<Abonent> filteredList = this.AbonentList.Where(a => a.PhoneNumber == abonent.PhoneNumber).ToList();
+      if (filteredList.Count > 0)
+      {
+        foreach (var entry in filteredList)
+        {
+          Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
+        }
+      }
+      else
+        Console.WriteLine("Абонент не найден");
     }
+
+    /// <summary>
+    /// Вывести в консоль абонентов с соответствующим именем.
+    /// </summary>
+    public void PrintAbonentByName(Abonent abonent)
+    {
+			List<Abonent> filteredList = this.AbonentList.Where(a => a.Name.ToLower() == abonent.Name.ToLower()).ToList();
+			if (filteredList.Count > 0)
+			{
+				foreach (var entry in filteredList)
+				{
+					Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
+				}
+			}
+			else
+				Console.WriteLine("Абонент не найден");
+		}
     public static Phonebook GetInstance()
     {
       if (instance == null)
@@ -103,7 +131,7 @@ namespace Homework3
 				while (!sr.EndOfStream)
 				{
 					string[] split = Regex.Split(sr.ReadLine(), ": ");
-					Abonent abonent = new Abonent(split[0], split[1]);
+					Abonent abonent = new Abonent(split[0], long.Parse(split[1]));
 					AbonentList.Add(abonent);
 				}
 			}
