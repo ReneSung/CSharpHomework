@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Homework3
 {
@@ -11,18 +12,17 @@ namespace Homework3
   {
     static void Main(string[] args)
     {
-      Phonebook phonebook = Phonebook.GetInstance();
-      phonebook.PrintAbonentList();
+			Console.InputEncoding = Encoding.GetEncoding(1251);
+			var phonebook = Phonebook.GetInstance();
 			bool isRunnig = true;
-      while (isRunnig)
-      {
+			while (isRunnig)
+			{
 				Console.WriteLine("Выберете действие\n" +
-												"1 - отобразить список всех контактов\n" +
-												"2 - добавить контакт\n" +
-												"3 - удалить контакт\n" +
-												"4 - отобразить контакты по номеру телефона\n" +
-												"5 - отобразить контакты по имени абонента\n" +
-												"6 - выйти из программы");
+												"1 - добавить контакт\n" +
+												"2 - удалить контакт\n" +
+												"3 - отобразить контакты по номеру телефона\n" +
+												"4 - отобразить контакты по имени абонента\n" +
+												"5 - выйти из программы");
 				string userInput = Console.ReadLine();
 				string name;
 				long phoneNumber;
@@ -31,7 +31,15 @@ namespace Homework3
 				{
 					case "1":
 						Console.Clear();
-						phonebook.PrintAbonentList();
+						Console.WriteLine("Введите имя абонента");
+						name = Console.ReadLine();
+						Console.WriteLine("Введите номер абонента");
+						phoneNumber = long.Parse(Console.ReadLine());
+						abonent = new Abonent(name, phoneNumber);
+						if (phonebook.AddAbonent(abonent))
+							Console.WriteLine("Абонент добавлен");
+						else
+							Console.WriteLine("Такой абонент уже есть");
 						break;
 					case "2":
 						Console.Clear();
@@ -40,36 +48,49 @@ namespace Homework3
 						Console.WriteLine("Введите номер абонента");
 						phoneNumber = long.Parse(Console.ReadLine());
 						abonent = new Abonent(name, phoneNumber);
-						phonebook.AddAbonent(abonent);
+						if (phonebook.DropAbonent(abonent))
+							Console.WriteLine("Абонент удален");
+						else
+							Console.WriteLine("Абонент не найден");
 						break;
 					case "3":
 						Console.Clear();
-						Console.WriteLine("Введите имя абонента");
-						name = Console.ReadLine();
 						Console.WriteLine("Введите номер абонента");
 						phoneNumber = long.Parse(Console.ReadLine());
-						abonent = new Abonent(name, phoneNumber);
-						phonebook.DropAbonent(abonent);
+
+						abonent = new Abonent(phoneNumber);
+
+						if (phonebook.GetAbonentByPhoneNumber(abonent).Count > 0)
+						{
+							foreach (var entry in phonebook.GetAbonentByPhoneNumber(abonent))
+							{
+								Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
+							}
+						}
+						else
+							Console.WriteLine("Абонент не найден");
 						break;
 					case "4":
-						Console.Clear();
-						Console.WriteLine("Введите номер абонента");
-						phoneNumber = long.Parse(Console.ReadLine());
-						abonent = new Abonent(phoneNumber);
-						phonebook.PrintAbonentByPhoneNumber(abonent);
-						break;
-					case "5":
 						Console.Clear();
 						Console.WriteLine("Введите имя абонента");
 						name = Console.ReadLine();
 						abonent = new Abonent(name);
-						phonebook.PrintAbonentByName(abonent);
+            if (phonebook.GetAbonentByName(abonent).Count > 0)
+            {
+              foreach (var entry in phonebook.GetAbonentByName(abonent))
+              {
+                Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
+              }
+            }
+            else
+              Console.WriteLine("Абонент не найден");
+            phonebook.GetAbonentByName(abonent);
 						break;
-					case "6":
+					case "5":
 						isRunnig = false;
 						break;
 				}
 			}
-    }
+		}
   }
 }

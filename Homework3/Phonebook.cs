@@ -14,54 +14,45 @@ namespace Homework3
     public List<Abonent> AbonentList { get; }
 
     /// <summary>
-    /// Добавляет нового абонента в коллекцию AbonentList и записывает абонента в конец файла.
+    /// Добавить абонента в справочник.
     /// </summary>
-    /// <param name="abonent">Объект Abonent с именем и номером телефона.</param>
-    public void AddAbonent(Abonent abonent)
+    /// <param name="abonent">Объект Abonent.</param>
+    /// <returns>True, если абонент добавлен. False, если абонент с такими данными есть.</returns>
+    public bool AddAbonent(Abonent abonent)
     {
       bool correctEntry = true;
-			foreach (var entry in AbonentList)
-			{
-				if (entry.Name.ToLower() == abonent.Name.ToLower() && entry.PhoneNumber == abonent.PhoneNumber)
-				{
-					correctEntry = false;
-					break;
-				}
-			}
-			if (correctEntry)
-			{
-				AbonentList.Add(abonent);
+      for (int i = 0; i < AbonentList.Count; i++)
+      {
+        if (abonent.Equals(AbonentList[i]))
+        {
+          correctEntry = false;
+          return correctEntry;
+        }
+      }
+      if (correctEntry)
+      {
+        AbonentList.Add(abonent);
         using (StreamWriter sw = new StreamWriter(path, true, Encoding.UTF8))
         {
           sw.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
         }
-        Console.WriteLine("Добавлен новый абонент.");
-			}
-			else
-				Console.WriteLine("Такой абонент уже есть.");
+        return correctEntry;
+      }
+      else
+        return correctEntry;
 		}
 
     /// <summary>
-    /// Вывод абонентов в консоль.
-    /// </summary>
-    public void PrintAbonentList()
-    {
-      foreach (var abonent in this.AbonentList)
-      {
-        Console.WriteLine($"{abonent.Name}: {abonent.PhoneNumber}");
-      }
-    }
-    
-    /// <summary>
     /// Удалить объект из коллекции AbonentList, перезаписать обновленную коллекцию в файл.
     /// </summary>
-    /// <param name="abonent">Объект Abonent с именем и номером телефона.</param>
-    public void DropAbonent(Abonent abonent)
+    /// <param name="abonent">Объект Abonent.</param>
+    /// <returns>True, если абонент удален. False, если абонент не найден.</returns>
+    public bool DropAbonent(Abonent abonent)
     {
-      bool isDrop = false;
+      bool isDropped = false;
       for (int i = 0; i < this.AbonentList.Count; i++)
       {
-        if (this.AbonentList[i].Name.ToLower() == abonent.Name.ToLower() && this.AbonentList[i].PhoneNumber == abonent.PhoneNumber)
+        if (this.AbonentList[i].Equals(abonent))
         {
           AbonentList.RemoveAt(i);
           using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8))
@@ -71,51 +62,33 @@ namespace Homework3
               sw.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
             }
           }
-          isDrop = true;
-          break;
+          isDropped = true;
+          return isDropped;
         }
       }
-
-      if (isDrop)
-        Console.WriteLine("Абонент удален");
-      else
-        Console.WriteLine("Абонент не найден");
-    }
-
-		/// <summary>
-		/// Вывести в консоль абонентов с соответствующим номером телефона.
-		/// </summary>
-		/// <param name="abonent">Объект Abonent.</param>
-		public void PrintAbonentByPhoneNumber(Abonent abonent)
-    {
-      List<Abonent> filteredList = this.AbonentList.Where(a => a.PhoneNumber == abonent.PhoneNumber).ToList();
-      if (filteredList.Count > 0)
-      {
-        foreach (var entry in filteredList)
-        {
-          Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
-        }
-      }
-      else
-        Console.WriteLine("Абонент не найден");
+      return isDropped;
     }
 
     /// <summary>
-    /// Вывести в консоль абонентов с соответствующим именем.
+    /// Получить коллекцию абонентов с соответствующим номером телефона.
     /// </summary>
-    public void PrintAbonentByName(Abonent abonent)
+    /// <param name="abonent">Объект Abonent.</param>
+    /// <returns>Коллекция Abonent.</returns>
+    public List<Abonent> GetAbonentByPhoneNumber(Abonent abonent)
     {
-			List<Abonent> filteredList = this.AbonentList.Where(a => a.Name.ToLower() == abonent.Name.ToLower()).ToList();
-			if (filteredList.Count > 0)
-			{
-				foreach (var entry in filteredList)
-				{
-					Console.WriteLine($"{entry.Name}: {entry.PhoneNumber}");
-				}
-			}
-			else
-				Console.WriteLine("Абонент не найден");
-		}
+      return this.AbonentList.Where(a => a.PhoneNumber == abonent.PhoneNumber).ToList();
+    }
+
+    /// <summary>
+    /// Получить абонентов с соответствующим именем.
+    /// </summary>
+    /// <param name="abonent">Объект Abonent.</param>
+    /// <returns>Коллекция Abonent.</returns>
+    public List<Abonent> GetAbonentByName(Abonent abonent)
+    {
+      return this.AbonentList.Where(a => a.Name.ToLower() == abonent.Name.ToLower()).ToList();
+    }
+
     public static Phonebook GetInstance()
     {
       if (instance == null)
@@ -126,7 +99,6 @@ namespace Homework3
     {
 			using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
 			{
-				//string line = string.Empty;
 				this.AbonentList = new List<Abonent>();
 				while (!sr.EndOfStream)
 				{
