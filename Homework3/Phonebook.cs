@@ -7,18 +7,38 @@ using System.Text.RegularExpressions;
 
 namespace Homework3
 {
+  /// <summary>
+  /// Запись в телефонной книге.
+  /// </summary>
   internal class Phonebook
   {
-    private static Phonebook instance;
-    private const string path = "phonebook.txt";
-    public List<Abonent> AbonentList { get; }
+		#region Поля и свойства
 
     /// <summary>
-    /// Добавить абонента в справочник.
+    /// Экземпляр для реализации singletone.
     /// </summary>
-    /// <param name="abonent">Объект Abonent.</param>
-    /// <returns>True, если абонент добавлен. False, если абонент с такими данными есть.</returns>
-    public bool AddAbonent(Abonent abonent)
+		private static Phonebook instance;
+
+    /// <summary>
+    /// Путь к фаайлу.
+    /// </summary>
+    private const string path = "phonebook.txt";
+
+    /// <summary>
+    /// Список абонентов.
+    /// </summary>
+    public List<Abonent> AbonentList { get; }
+
+		#endregion
+
+		#region Методы
+
+		/// <summary>
+		/// Добавить абонента в справочник.
+		/// </summary>
+		/// <param name="abonent">Объект Abonent.</param>
+		/// <returns>True, если абонент добавлен. False, если абонент с такими данными есть.</returns>
+		public bool AddAbonent(Abonent abonent)
     {
       bool correctEntry = true;
       for (int i = 0; i < AbonentList.Count; i++)
@@ -89,14 +109,26 @@ namespace Homework3
       return this.AbonentList.Where(a => a.Name.ToLower() == abonent.Name.ToLower()).ToList();
     }
 
+    /// <summary>
+    /// Получить экземпляр объекта.
+    /// </summary>
+    /// <returns>объект Phonebook.</returns>
     public static Phonebook GetInstance()
     {
       if (instance == null)
         instance = new Phonebook();
       return instance;
     }
-    private Phonebook()
-    {
+
+		#endregion
+
+		#region Конструкторы
+
+		/// <summary>
+		/// Конструктор
+		/// </summary>
+		private Phonebook()
+		{
 			using (StreamReader sr = new StreamReader(path, Encoding.UTF8))
 			{
 				this.AbonentList = new List<Abonent>();
@@ -108,5 +140,7 @@ namespace Homework3
 				}
 			}
 		}
-  }
+
+		#endregion
+	}
 }

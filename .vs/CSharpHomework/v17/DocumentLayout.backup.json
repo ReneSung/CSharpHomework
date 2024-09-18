@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\study\\CSharpHomework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|D:\\study\\CSharpHomework\\homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|d:\\study\\csharphomework\\homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|D:\\study\\CSharpHomework\\homework3\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|d:\\study\\csharphomework\\homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|D:\\study\\CSharpHomework\\homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework3\\Program.cs",
               "RelativeDocumentMoniker": "Homework3\\Program.cs",
               "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Program.cs",
               "RelativeToolTip": "Homework3\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwA8AAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-24T09:08:42.591Z",
               "IsPinned": true,
@@ -46,11 +46,10 @@
               "RelativeDocumentMoniker": "Homework3\\Phonebook.cs",
               "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Phonebook.cs",
               "RelativeToolTip": "Homework3\\Phonebook.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA1wBEAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAgwBEAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-24T08:53:17.26Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -70,16 +69,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Abonent.cs",
               "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework3\\Abonent.cs",
               "RelativeDocumentMoniker": "Homework3\\Abonent.cs",
               "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Abonent.cs",
               "RelativeToolTip": "Homework3\\Abonent.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAIwDMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwDMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T16:24:09.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-24T16:24:09.827Z"
             }
           ]
         }

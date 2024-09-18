@@ -8,15 +8,37 @@ namespace Homework3
 {
   internal class Abonent
   {
-    public string Name { get; set; }
+		#region Поля и свойства
+
+    /// <summary>
+    /// Имя абонента.
+    /// </summary>
+		public string Name { get; set; }
+
+    /// <summary>
+    /// Номер телефона абонента.
+    /// </summary>
     public long PhoneNumber { get; set; }
 
-    public override bool Equals(object obj)
+		#endregion
+
+		#region Методы
+
+		/// <summary>
+		/// Сравнить объекты.
+		/// </summary>
+		/// <param name="obj">Объект для сравнения.</param>
+		/// <returns>True, если значения объектов равны. Иначе - false.</returns>
+		public override bool Equals(object obj)
     {
       Abonent other = obj as Abonent;
       return other.Name.ToLower() == Name.ToLower() && other.PhoneNumber == PhoneNumber;
     }
 
+    /// <summary>
+    /// Получить хэш объекта.
+    /// </summary>
+    /// <returns>Хэш объекта.</returns>
     public override int GetHashCode()
     {
       int hashCode = 1992402788;
@@ -25,20 +47,41 @@ namespace Homework3
       return hashCode;
     }
 
-    public Abonent(string name, long phoneNumber)
+		#endregion
+
+		#region Конструкторы
+
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    /// <param name="name">Имя.</param>
+    /// <param name="phoneNumber">Номер телефона.</param>
+		public Abonent(string name, long phoneNumber)
     {
       this.Name = name;
       this.PhoneNumber = phoneNumber;
     }
-    public Abonent(long phoneNumber)
+
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
+		/// <param name="phoneNumber">Номер телефона.</param>
+		public Abonent(long phoneNumber)
       : this(string.Empty, phoneNumber)
     {
       this.PhoneNumber = phoneNumber;
     }
-    public Abonent(string name)
+
+		/// <summary>
+		/// Конструктор.
+		/// </summary>
+		/// <param name="name">Имя.</param>
+		public Abonent(string name)
       : this(name, 0)
     {
       this.Name = name;
     }
-  }
+
+		#endregion
+	}
 }
