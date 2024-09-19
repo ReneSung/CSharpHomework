@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Homework3
 {
+  /// <summary>
+  /// Абонент.
+  /// </summary>
   internal class Abonent
   {
 		#region Поля и свойства
