@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Homework4
 {
@@ -112,6 +113,31 @@ namespace Homework4
       }
     }
 
+    /// <summary>
+    /// Отобразить список сотрудников.
+    /// </summary>
+    /// <param name="manager">Объект EmployeeManager.</param>
+    private static void PrintEmployeeList(EmployeeManager<Employee> manager)
+    {
+      Console.WriteLine("Список сотрудников\n" +
+                        "=======================\n");
+      foreach (var i in manager.employees)
+      {
+        if (i is FullTimeEmployee)
+         Console.WriteLine($"Имя: {i.Name}\n" +
+                            $"Оклад: {i.Basesalary}\n" +
+                            $"Размер оплаты: {i.CalculateSalary()}\n");
+        else if (i is PartTimeEmployee)
+        {
+          PartTimeEmployee prtTimeEmployee = i as PartTimeEmployee;
+          Console.WriteLine($"Имя: {prtTimeEmployee.Name}\n" +
+                            $"Оклад: {prtTimeEmployee.Basesalary}\n" +
+                            $"Отработанные часы: {prtTimeEmployee.Hours}\n" +
+                            $"Размер оплаты: {prtTimeEmployee.CalculateSalary()}\n");
+        }
+      }
+    }
+
     static void Main(string[] args)
     {
       bool isRunning = true;
@@ -120,64 +146,37 @@ namespace Homework4
       FillOutList(ref manager);
       while (isRunning)
       {
-        Console.WriteLine("Список сотрудников\n" +
-                          "=======================\n");
-        foreach (var i in manager.employees)
-        {
-          if (i is FullTimeEmployee)
-            Console.WriteLine($"Имя: {i.Name}\n" +
-                              $"Оклад: {i.Basesalary}\n" +
-                              $"Размер оплаты: {i.CalculateSalary()}\n");
-          else if (i is PartTimeEmployee)
-          {
-            PartTimeEmployee prtTimeEmployee = i as PartTimeEmployee;
-            Console.WriteLine($"Имя: {prtTimeEmployee.Name}\n" +
-                              $"Оклад: {prtTimeEmployee.Basesalary}\n" +
-                              $"Отработанные часы: {prtTimeEmployee.Hours}\n" +
-                              $"Размер оплаты: {prtTimeEmployee.CalculateSalary()}\n");
-          }
-        }
+			  PrintEmployeeList(manager);
 
-        Console.WriteLine("\n1 - добавить сотрудника\n" +
-                          "2 - получить информацию о сотруднике\n" +
-                          "3 - обновить данные сотрудника\n" +
-                          "4 - выйти");
+        Console.WriteLine("\n1 - Добавить полного сотрудника\n" +
+                          "2 - Добавить частичного сотрудника\n" +
+                          "3 - получить информацию о сотруднике\n" +
+                          "4 - обновить данные сотрудника\n" +
+                          "5 - выйти");
 
         string input = Console.ReadLine();
 
         switch (input)
         {
           case "1":
-            Console.WriteLine("1 - добавить полного сотрудника\n" +
-                              "2 - добавить частного сотрудника");
-
-            input = Console.ReadLine();
-
-            if (input == "1")
-            {
-              FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
-              AddEmployee(fullTimeEmployee, manager);
-            }
-            else if (input == "2")
-            {
-              PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
-              AddEmployee(partTimeEmployee, manager);
-            }
-            else
-              Console.WriteLine("Нет такой команды");
-
+						FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
+						AddEmployee(fullTimeEmployee, manager);
             break;
           case "2":
+						PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
+						AddEmployee(partTimeEmployee, manager);
+            break;
+					case "3":
             FindEmployee(manager);
             break;
-          case "3":
+          case "4":
             UpdateSalaryEmployee(manager);
             break;
-          case "4":
+          case "5":
             isRunning = false;
             break;
         }
-        Console.Clear();
+        
       }
     }
   }
