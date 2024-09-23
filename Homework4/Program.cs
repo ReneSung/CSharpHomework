@@ -121,7 +121,7 @@ namespace Homework4
       while (isRunning)
       {
         Console.WriteLine("Список сотрудников\n" +
-												"=======================\n");
+                          "=======================\n");
         foreach (var i in manager.employees)
         {
           if (i is FullTimeEmployee)

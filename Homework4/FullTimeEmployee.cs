@@ -9,7 +9,7 @@ namespace Homework4
   internal class FullTimeEmployee : Employee
   {
 
-	  #region Поля и свойства
+    #region Поля и свойства
 
     /// <summary>
     /// Имя.

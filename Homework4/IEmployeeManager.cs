@@ -5,7 +5,7 @@
   /// </summary>
   /// <typeparam name="T">Объек Employee.</typeparam>
   internal interface IEmployeeManager<T>
-	{
+  {
     #region Методы.
 
     /// <summary>
