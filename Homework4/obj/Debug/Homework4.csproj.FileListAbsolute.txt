@@ -1,7 +1,0 @@
-D:\study\CSharpHomework\Homework4\bin\Debug\Homework4.exe.config
-D:\study\CSharpHomework\Homework4\bin\Debug\Homework4.exe
-D:\study\CSharpHomework\Homework4\bin\Debug\Homework4.pdb
-D:\study\CSharpHomework\Homework4\obj\Debug\Homework4.csproj.AssemblyReference.cache
-D:\study\CSharpHomework\Homework4\obj\Debug\Homework4.csproj.CoreCompileInputs.cache
-D:\study\CSharpHomework\Homework4\obj\Debug\Homework4.exe
-D:\study\CSharpHomework\Homework4\obj\Debug\Homework4.pdb
