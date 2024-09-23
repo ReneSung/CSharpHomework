@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\study\\CSharpHomework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|d:\\study\\csharphomework\\homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\fulltimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\fulltimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|D:\\study\\CSharpHomework\\homework3\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\phonebook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\\uFEFFparttimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\\uFEFFparttimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|D:\\study\\CSharpHomework\\homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D95FB5-1681-4107-B164-8A4CE86589BD}|Homework3\\Homework3.csproj|solutionrelative:homework3\\abonent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|d:\\study\\csharphomework\\homework4\\iemployeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\iemployeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\employeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\employeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework3\\Program.cs",
-              "RelativeDocumentMoniker": "Homework3\\Program.cs",
-              "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Program.cs",
-              "RelativeToolTip": "Homework3\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAvAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework4\\Program.cs",
+              "RelativeDocumentMoniker": "Homework4\\Program.cs",
+              "ToolTip": "D:\\study\\CSharpHomework\\Homework4\\Program.cs",
+              "RelativeToolTip": "Homework4\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T09:08:42.591Z",
+              "WhenOpened": "2024-09-21T10:52:49.523Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Phonebook.cs",
-              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework3\\Phonebook.cs",
-              "RelativeDocumentMoniker": "Homework3\\Phonebook.cs",
-              "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Phonebook.cs",
-              "RelativeToolTip": "Homework3\\Phonebook.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwBEAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T08:53:17.26Z",
-              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -69,15 +64,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Abonent.cs",
-              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework3\\Abonent.cs",
-              "RelativeDocumentMoniker": "Homework3\\Abonent.cs",
-              "ToolTip": "D:\\study\\CSharpHomework\\Homework3\\Abonent.cs",
-              "RelativeToolTip": "Homework3\\Abonent.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwDMAAAACAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "EmployeeManager.cs",
+              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework4\\EmployeeManager.cs",
+              "RelativeDocumentMoniker": "Homework4\\EmployeeManager.cs",
+              "ToolTip": "D:\\study\\CSharpHomework\\Homework4\\EmployeeManager.cs",
+              "RelativeToolTip": "Homework4\\EmployeeManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T16:24:09.827Z"
+              "WhenOpened": "2024-09-21T11:36:56.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IEmployeeManager.cs",
+              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework4\\IEmployeeManager.cs",
+              "RelativeDocumentMoniker": "Homework4\\IEmployeeManager.cs",
+              "ToolTip": "D:\\study\\CSharpHomework\\Homework4\\IEmployeeManager.cs",
+              "RelativeToolTip": "Homework4\\IEmployeeManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T11:36:05.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\uFEFFPartTimeEmployee.cs",
+              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework4\\\uFEFFPartTimeEmployee.cs",
+              "RelativeDocumentMoniker": "Homework4\\\uFEFFPartTimeEmployee.cs",
+              "ToolTip": "D:\\study\\CSharpHomework\\Homework4\\\uFEFFPartTimeEmployee.cs",
+              "RelativeToolTip": "Homework4\\\uFEFFPartTimeEmployee.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwDsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:14:24.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FullTimeEmployee.cs",
+              "DocumentMoniker": "D:\\study\\CSharpHomework\\Homework4\\FullTimeEmployee.cs",
+              "RelativeDocumentMoniker": "Homework4\\FullTimeEmployee.cs",
+              "ToolTip": "D:\\study\\CSharpHomework\\Homework4\\FullTimeEmployee.cs",
+              "RelativeToolTip": "Homework4\\FullTimeEmployee.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T19:13:38.58Z",
+              "EditorCaption": ""
             }
           ]
         }
