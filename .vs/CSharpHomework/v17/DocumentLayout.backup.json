@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\study\\CSharpHomework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\fulltimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|d:\\study\\csharphomework\\homework4\\fulltimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\fulltimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\\uFEFFparttimeemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|d:\\study\\csharphomework\\homework4\\iemployeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|D:\\study\\CSharpHomework\\homework4\\iemployeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B529B5-3F36-4592-BC8C-BEA231EDB603}|Homework4\\Homework4.csproj|solutionrelative:homework4\\iemployeemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -43,8 +43,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T10:52:49.523Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Homework4\\EmployeeManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T11:36:56.229Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T11:36:56.229Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Homework4\\IEmployeeManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T11:36:05.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T11:36:05.518Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Homework4\\\uFEFFPartTimeEmployee.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwDsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T19:14:24.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-21T19:14:24.395Z"
             },
             {
               "$type": "Document",

@@ -6,54 +6,54 @@ using System.Threading.Tasks;
 
 namespace Homework4
 {
-	internal class FullTimeEmployee : Employee
-	{
+  internal class FullTimeEmployee : Employee
+  {
 
-		#region Поля и свойства
+	  #region Поля и свойства
 
-		/// <summary>
-		/// Имя.
-		/// </summary>
-		public override string Name { get; set; }
+    /// <summary>
+    /// Имя.
+    /// </summary>
+    public override string Name { get; set; }
 
-		/// <summary>
-		/// Оклад.
-		/// </summary>
-		public override decimal Basesalary { get; set; }
+    /// <summary>
+    /// Оклад.
+    /// </summary>
+    public override decimal Basesalary { get; set; }
 
-		#endregion
+    #endregion
 
-		#region Методы
+    #region Методы
 
-		/// <summary>
-		/// Рассчитать заплату сотрудника.
-		/// </summary>
-		/// <returns>Зарплата сотрудника.</returns>
-		public override decimal CalculateSalary()
-		{
-			return this.Basesalary;
-		}
+    /// <summary>
+    /// Рассчитать заплату сотрудника.
+    /// </summary>
+    /// <returns>Зарплата сотрудника.</returns>
+    public override decimal CalculateSalary()
+    {
+      return this.Basesalary;
+    }
+ 
+    #endregion
 
-		#endregion
+    #region Конструкторы
 
-		#region Конструкторы
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    /// <param name="name">Имя.</param>
+    /// <param name="salary">Оклад.</param>
+    public FullTimeEmployee(string name, decimal salary)
+    {
+      this.Name = name;
+      this.Basesalary = salary;
+    }
 
-		/// <summary>
-		/// Конструктор.
-		/// </summary>
-		/// <param name="name">Имя.</param>
-		/// <param name="salary">Оклад.</param>
-		public FullTimeEmployee(string name, decimal salary)
-		{
-			this.Name = name;
-			this.Basesalary = salary;
-		}
+    /// <summary>
+    /// Конструктор.
+    /// </summary>
+    public FullTimeEmployee() { }
 
-		/// <summary>
-		/// Конструктор.
-		/// </summary>
-		public FullTimeEmployee() { }
-
-		#endregion
+    #endregion
 	}
 }
