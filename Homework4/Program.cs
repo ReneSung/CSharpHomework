@@ -114,7 +114,7 @@ namespace Homework4
     }
 
     /// <summary>
-    /// Отобразить список сотрудников.
+    /// Вывести список сотрудников в консоль.
     /// </summary>
     /// <param name="manager">Объект EmployeeManager.</param>
     private static void PrintEmployeeList(EmployeeManager<Employee> manager)
@@ -146,7 +146,7 @@ namespace Homework4
       FillOutList(ref manager);
       while (isRunning)
       {
-			  PrintEmployeeList(manager);
+        PrintEmployeeList(manager);
 
         Console.WriteLine("\n1 - Добавить полного сотрудника\n" +
                           "2 - Добавить частичного сотрудника\n" +
@@ -159,14 +159,14 @@ namespace Homework4
         switch (input)
         {
           case "1":
-						FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
-						AddEmployee(fullTimeEmployee, manager);
+            FullTimeEmployee fullTimeEmployee = new FullTimeEmployee();
+            AddEmployee(fullTimeEmployee, manager);
             break;
           case "2":
-						PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
-						AddEmployee(partTimeEmployee, manager);
+            PartTimeEmployee partTimeEmployee = new PartTimeEmployee();
+            AddEmployee(partTimeEmployee, manager);
             break;
-					case "3":
+          case "3":
             FindEmployee(manager);
             break;
           case "4":
@@ -176,7 +176,6 @@ namespace Homework4
             isRunning = false;
             break;
         }
-        
       }
     }
   }
