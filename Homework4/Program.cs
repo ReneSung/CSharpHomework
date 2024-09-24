@@ -1,24 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace Homework4
 {
   internal class Program
   {
-    /// <summary>
-    /// Заполнение списка рандомными записями.
-    /// </summary>
-    /// <param name="manager">Объект EmployeeManager.</param>
-    private static void FillOutList(ref EmployeeManager<Employee> manager)
-    {
-      manager.employees = new List<Employee>();
-      manager.employees.Add(new FullTimeEmployee("Иванов Иван", 1000));
-      manager.employees.Add(new FullTimeEmployee("Боб", 2000));
-      manager.employees.Add(new PartTimeEmployee("Стив", 20, 50));
-      manager.employees.Add(new PartTimeEmployee("Дмитрий", 50, 50));
-    }
-
     /// <summary>
     /// Добавить сотрудника.
     /// </summary>
@@ -45,12 +30,12 @@ namespace Homework4
           Console.WriteLine("Введите количество отработанных часов");
           int workedHours = int.Parse(Console.ReadLine());
           PartTimeEmployee partTimeEmployee = new PartTimeEmployee(name, decimal.Parse(salary), workedHours);
-          manager.employees.Add(partTimeEmployee);
+          manager.Add(partTimeEmployee);
         }
         else if (employee is FullTimeEmployee)
         {
           FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(name, decimal.Parse(salary));
-          manager.employees.Add(fullTimeEmployee);
+          manager.Add(fullTimeEmployee);
         }
       }
     }
@@ -97,18 +82,24 @@ namespace Homework4
       string name = Console.ReadLine();
 
       Console.WriteLine("Введите  новый размер оклада");
-      decimal salary = decimal.Parse(Console.ReadLine());
+      string salary = Console.ReadLine();
 
-      if (manager.Get(name) is FullTimeEmployee)
+      if (manager.Get(name) == null)
+      {
+        Console.WriteLine("Сотрудник не найден");
+        Console.WriteLine("Нажмите любую клавишу, чтобы продолжить");
+        Console.ReadKey();
+      }
+      else if (manager.Get(name) is FullTimeEmployee)
       {
         FullTimeEmployee employee = manager.Get(name) as FullTimeEmployee;
-        employee.Basesalary = salary;
+        employee.Basesalary = decimal.Parse(salary);
         manager.Update(employee);
       }
       else if (manager.Get(name) is PartTimeEmployee)
       {
         PartTimeEmployee employee = manager.Get(name) as PartTimeEmployee;
-        employee.Basesalary = salary;
+        employee.Basesalary = decimal.Parse(salary);
         manager.Update(employee);
       }
     }
@@ -119,21 +110,24 @@ namespace Homework4
     /// <param name="manager">Объект EmployeeManager.</param>
     private static void PrintEmployeeList(EmployeeManager<Employee> manager)
     {
-      Console.WriteLine("Список сотрудников\n" +
-                        "=======================\n");
-      foreach (var i in manager.employees)
+      if (manager.Employees.Count > 0)
       {
-        if (i is FullTimeEmployee)
-         Console.WriteLine($"Имя: {i.Name}\n" +
-                            $"Оклад: {i.Basesalary}\n" +
-                            $"Размер оплаты: {i.CalculateSalary()}\n");
-        else if (i is PartTimeEmployee)
+        Console.WriteLine("Список сотрудников\n" +
+                        "=======================\n");
+        foreach (var i in manager.Employees)
         {
-          PartTimeEmployee prtTimeEmployee = i as PartTimeEmployee;
-          Console.WriteLine($"Имя: {prtTimeEmployee.Name}\n" +
-                            $"Оклад: {prtTimeEmployee.Basesalary}\n" +
-                            $"Отработанные часы: {prtTimeEmployee.Hours}\n" +
-                            $"Размер оплаты: {prtTimeEmployee.CalculateSalary()}\n");
+          if (i is FullTimeEmployee)
+            Console.WriteLine($"Имя: {i.Name}\n" +
+                               $"Оклад: {i.Basesalary}\n" +
+                               $"Размер оплаты: {i.CalculateSalary()}\n");
+          else if (i is PartTimeEmployee)
+          {
+            PartTimeEmployee prtTimeEmployee = i as PartTimeEmployee;
+            Console.WriteLine($"Имя: {prtTimeEmployee.Name}\n" +
+                              $"Оклад: {prtTimeEmployee.Basesalary}\n" +
+                              $"Отработанные часы: {prtTimeEmployee.Hours}\n" +
+                              $"Размер оплаты: {prtTimeEmployee.CalculateSalary()}\n");
+          }
         }
       }
     }
@@ -143,7 +137,6 @@ namespace Homework4
       bool isRunning = true;
 
       EmployeeManager<Employee> manager = new EmployeeManager<Employee>();
-      FillOutList(ref manager);
       while (isRunning)
       {
         PrintEmployeeList(manager);

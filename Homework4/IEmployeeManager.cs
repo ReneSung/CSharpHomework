@@ -3,7 +3,7 @@
   /// <summary>
   /// Интерфейс управления сотрудниками.
   /// </summary>
-  /// <typeparam name="T">Объек Employee.</typeparam>
+  /// <typeparam name="T">Объект Employee.</typeparam>
   internal interface IEmployeeManager<T>
   {
     #region Методы.

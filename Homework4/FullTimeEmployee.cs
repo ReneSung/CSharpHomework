@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Homework4
 {
+  /// <summary>
+  /// Полный сотрудник.
+  /// </summary>
   internal class FullTimeEmployee : Employee
   {
-
     #region Поля и свойства
 
     /// <summary>
@@ -55,5 +57,5 @@ namespace Homework4
     public FullTimeEmployee() { }
 
     #endregion
-	}
+  }
 }

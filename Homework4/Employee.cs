@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Homework4
+﻿namespace Homework4
 {
+  /// <summary>
+  /// Абстрактный класс сотрудника.
+  /// </summary>
   internal abstract class Employee
   {
     #region Поля и свойства

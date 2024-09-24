@@ -12,37 +12,35 @@ namespace Homework4
     #region Поля и свойства
 
     /// <summary>
-    /// Колекция сотрудников.
+    /// Колекция.
     /// </summary>
-    public List<T> employees = new List<T>();
+    private List<T> employees = new List<T>();
+
+    /// <summary>
+    /// Коллекция для чтения.
+    /// </summary>
+    public IReadOnlyCollection<T> Employees
+    {
+      get
+      {
+        return employees.AsReadOnly();
+      }
+    }
 
     #endregion
 
-    #region Методы
+    #region Интерфейс IEmployeeManager
 
-    /// <summary>
-    /// Добавить сотрудника в коллекцию.
-    /// </summary>
-    /// <param name="employee">Сотрудник.</param>
     public void Add(T employee)
     {
       employees.Add(employee);
     }
 
-    /// <summary>
-    /// Получить сотрудника из коллекции по имени.
-    /// </summary>
-    /// <param name="name">Имя сотрудника.</param>
-    /// <returns>Объект Employee.</returns>
     public T Get(string name)
     {
       return employees.FirstOrDefault(e => e.Name == name);
     }
 
-    /// <summary>
-    /// Обновить информацию о сотруднике.
-    /// </summary>
-    /// <param name="employee">Сотрудник.</param>
     public void Update(T employee)
     {
       int index = employees.IndexOf(Get(employee.Name));

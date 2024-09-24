@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Homework4
 {
+  /// <summary>
+  /// Частичный сотрудник.
+  /// </summary>
   internal class PartTimeEmployee : Employee
   {
     #region Поля и свойства
@@ -46,7 +49,7 @@ namespace Homework4
     /// Конструктор.
     /// </summary>
     /// <param name="name">Имя.</param>
-    /// <param name="baseSalary">Оклаад.</param>
+    /// <param name="baseSalary">Оклад.</param>
     /// <param name="hours">Часы.</param>
     public PartTimeEmployee(string name, decimal baseSalary, int hours)
     {
