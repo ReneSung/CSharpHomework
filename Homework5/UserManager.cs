@@ -13,18 +13,7 @@ namespace Homework5
     /// <summary>
     /// Коллекцияю
     /// </summary>
-    private List<User> users = new List<User>();
-
-    /// <summary>
-    /// Коллекция для чтения.
-    /// </summary>
-    public IReadOnlyCollection<User> Users
-    {
-      get
-      {
-        return users.AsReadOnly();
-      }
-    }
+    private readonly List<User> users = new List<User>();
 
     #endregion
 
