@@ -11,7 +11,7 @@ namespace Homework5
     #region
 
     /// <summary>
-    /// Коллекцияю
+    /// Коллекция.
     /// </summary>
     private readonly List<User> users = new List<User>();
 
@@ -27,7 +27,7 @@ namespace Homework5
     public void AddUser(User user)
     {
       if (this.users.Exists(u => u.Id == user.Id))
-        throw new UserAlreadyExistsException("Пользователь с таким id уже существует!");
+        throw new UserAlreadyExistsException($"Пользователь с id {user.Id} уже существует!");
 
       this.users.Add(user);
     }
@@ -47,17 +47,9 @@ namespace Homework5
     }
 
     /// <summary>
-    /// Вывести список пользователей в консоль.
+    /// Получить список пользователей.
     /// </summary>
-    public void ListUsers()
-    {
-      foreach (var item in this.users)
-      {
-        Console.WriteLine($"id: {item.Id}\n" +
-                          $"Имя: {item.Name}\n" +
-                          $"Email: {item.Email}\n");
-      }
-    }
+    public List<User> ListUsers() => this.users;
 
     /// <summary>
     /// Получить пользователя по id.

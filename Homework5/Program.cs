@@ -10,8 +10,12 @@ namespace Homework5
     /// <param name="userManager">Объект userManager.</param>
     private static void PrintUsers(UserManager userManager)
     {
-      Console.WriteLine("Пользователи\n");
-      userManager.ListUsers();
+      foreach (var item in userManager.ListUsers())
+      {
+        Console.WriteLine($"id: {item.Id}\n" +
+                          $"Имя: {item.Name}\n" +
+                          $"Email: {item.Email}\n");
+      }
     }
 
     /// <summary>
